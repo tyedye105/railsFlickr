@@ -1,0 +1,9 @@
+<h1>Somethig</h1>
+<%= @image.title %>
+<%=image_tag @image.avatar %>
+<%= @image.description %>
+<% if user_signed_in? %>
+  <% if @user.id === @image.user_id %>
+  <%= link_to "Delete" %>
+  <% end %>
+<% end %>
