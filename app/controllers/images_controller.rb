@@ -19,12 +19,30 @@ class ImagesController < ApplicationController
     @image = @user.images.new(image_params)
 
     if @user.save
-      binding.pry
       redirect_to '/'
     else
       render :new
     end
   end
+  def edit
+    @user = current_user
+    @image = Image.find(params[:id])
+  end
+  def update
+    @user = current_user
+    @image = Image.find(params[:id])
+      if @image.update(image_params)
+        redirect_to image_path(@image)
+      else
+        render edit
+      end
+    end
+    def destroy
+      @user = current_user
+      @image = Image.find(params[:id])
+      @image.destroy
+      redirect_to images_path
+    end
 
 private
   def image_params

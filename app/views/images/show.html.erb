@@ -1,9 +1,13 @@
 <h1>Somethig</h1>
 <%= @image.title %>
+<br>
 <%=image_tag @image.avatar %>
+<br>
 <%= @image.description %>
+<hr>
 <% if user_signed_in? %>
   <% if @user.id === @image.user_id %>
-  <%= link_to "Delete" %>
+  <%= link_to "Delete", image_path(@image), :method => 'delete' %>
+  <%= link_to "Edit", edit_user_image_path(@user, @image) %>
   <% end %>
 <% end %>
