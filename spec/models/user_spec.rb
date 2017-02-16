@@ -17,4 +17,5 @@ describe User do
     user = FactoryGirl.create(:user)
     expect(user.password).to eq '12'
   end
+  it { should have_many :images}
 end
