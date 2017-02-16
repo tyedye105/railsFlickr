@@ -34,7 +34,7 @@ class ImagesController < ApplicationController
       if @image.update(image_params)
         redirect_to image_path(@image)
       else
-        render edit
+        render :edit
       end
     end
     def destroy
