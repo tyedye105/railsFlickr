@@ -6,4 +6,13 @@
   <%= link_to 'Login', new_user_session_path %>
   <%= link_to 'Sign Up', new_user_registration_path %>
 <% end %>
+<% if @images.any? %>
+<%= image_tag @user.avatar.url(:medium) %>
+  <% @images.each do |i| %>
+    <%= i.title %>
+    <%= image_tag i.avatar.url(:medium) %>
+  <% end %>
+  <% else %>
   <h2 class="text-center">There are no pictures</h2>
+<%end %>
+<%= link_to "Add A picutre!", new_user_image_path(@user) %>
