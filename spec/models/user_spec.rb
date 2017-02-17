@@ -18,4 +18,5 @@ describe User do
     expect(user.password).to eq '12'
   end
   it { should have_many :images}
+  it { should have_many(:tags).through(:images)}
 end

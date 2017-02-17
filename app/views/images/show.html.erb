@@ -4,10 +4,14 @@
 <%=image_tag @image.avatar %>
 <br>
 <%= @image.description %>
+<% @taggedUsers.each do |tag| %>
+  <%= tag %>
+<% end %>
 <hr>
 <% if user_signed_in? %>
   <% if @user.id === @image.user_id %>
   <%= link_to "Delete", image_path(@image), :method => 'delete' %>
   <%= link_to "Edit", edit_user_image_path(@user, @image) %>
+  <%=  link_to "Tag User", new_image_tag_path(@image, @tag)%>
   <% end %>
 <% end %>

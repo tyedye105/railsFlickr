@@ -7,6 +7,12 @@ class ImagesController < ApplicationController
   def show
     @user = current_user
     @image = Image.find(params[:id])
+    @tags = @image.tags.all
+    @taggedUsers = []
+    @tags.each do |tag|
+      new_tag = User.find(tag.user_id)
+      @taggedUsers.push(new_tag.username)
+    end
   end
 
   def new
@@ -17,13 +23,13 @@ class ImagesController < ApplicationController
   def create
     @user = current_user
     @image = @user.images.new(image_params)
-
     if @user.save
       redirect_to '/'
     else
       render :new
     end
   end
+
   def edit
     @user = current_user
     @image = Image.find(params[:id])

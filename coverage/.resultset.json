@@ -674,6 +674,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/Guest/Desktop/Flikr_Clone/app/models/application_record.rb": [
@@ -730,11 +731,11 @@
         1,
         6,
         6,
-        null,
         6,
         5,
         null,
         1,
+        null,
         null,
         null,
         1,
@@ -780,7 +781,15 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
+        null
+      ],
+      "/Users/Guest/Desktop/Flikr_Clone/app/models/tag.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/Guest/Desktop/Flikr_Clone/spec/factories.rb": [
@@ -822,9 +831,10 @@
         1,
         null,
         2,
+        2,
         null
       ]
     },
-    "timestamp": 1487284318
+    "timestamp": 1487287624
   }
 }

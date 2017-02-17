@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: '300X300', thumb: '100X100' }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   has_many :images
+  has_many :tags, through: :images
   validates :name, :presence => true
   validates :username, :presence => true
 end
